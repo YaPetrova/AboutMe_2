@@ -10,11 +10,8 @@ import UIKit
 class LoginViewController: UIViewController {
    
     @IBOutlet var userNameTF: UITextField!
-    
     @IBOutlet var passwordTF: UITextField!
     
-    
-
     private let logInInfo = LogInInfo.getLogInInfo()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,7 +22,6 @@ class LoginViewController: UIViewController {
             if let welcomeVC = viewController as? WelcomeViewController{
                 welcomeVC.logInInfo = logInInfo
             }
-            
             else if let navigationVC = viewController as? UINavigationController {
                 let aboutMeVC = navigationVC.topViewController as! AboutMeViewController
                 aboutMeVC.logInInfo = logInInfo
@@ -33,30 +29,19 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     @IBAction func logInPressed() {
         if userNameTF.text != logInInfo.userName || passwordTF.text != logInInfo.password {
             showAlert(with: "Access denied", and: "Hacking into the system is prevented")
         }
     }
     
-    
-    
-    
     @IBAction func userNameReminder(_ sender: Any) {
         showAlert(with: "Super secret information", and: "User Name: \(logInInfo.userName)")
     }
     
-    
-   
-    
     @IBAction func passwordReminder(_ sender: Any) {
         showAlert(with: "Super secret information", and: "Password: \(logInInfo.password)")
-        
     }
-    
-    
-    
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTF.text = ""

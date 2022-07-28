@@ -8,10 +8,9 @@
 import UIKit
 
 class AboutMeViewController: UIViewController {
-
-    
-    
+   
     @IBOutlet var infoLabel: UILabel!
+    
     var logInInfo: LogInInfo!
 
     override func viewDidLoad() {

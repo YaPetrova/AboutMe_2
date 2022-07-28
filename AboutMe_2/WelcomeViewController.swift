@@ -8,11 +8,9 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    
-    
+
     @IBOutlet var welcomeLabel: UILabel!
-    
-    
+
     var logInInfo: LogInInfo!
     
     override func viewDidLoad() {
